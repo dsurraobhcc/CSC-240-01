@@ -1,0 +1,7 @@
+foreign keys
+cascading deletes
+unique constraints
+mapping tables
+database diagrams
+data integrity
+
