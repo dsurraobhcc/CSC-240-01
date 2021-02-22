@@ -30,8 +30,6 @@ values (2, @attendance_id, 'absent');
 insert into attendance_student (student_id, attendance_id, attendance_status)
 values (2, @attendance_id, 'present');
 
-Error Code: 1062. Duplicate entry '2-5' for key 'student_id'
-
 
 -- delete a session
 delete from attendance 
