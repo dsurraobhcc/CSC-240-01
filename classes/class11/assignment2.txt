@@ -1,0 +1,23 @@
+OPTION 1
+
+inventory
+---------
+inventory_id
+item_id
+seller_id
+quantity
+
+item
+-----
+item_id
+category_id
+item_name
+item_price
+
+
+OPTION 2
+
+item
+----
+quantity
+
