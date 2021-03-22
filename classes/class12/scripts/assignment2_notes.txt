@@ -1,0 +1,37 @@
+create table item (
+	item_id int unsigned auto_increment primary key,
+    category_id smallint unsigned not null,
+    item_name varchar(100) not null,
+    item_price decimal(8,2) unsigned not null,
+	....
+);
+
+create table seller (
+	seller_id mediumint unsigned auto_increment primary key,
+    seller_name varchar(50) not null unique
+);
+
+create table inventory (
+	inventory_id 
+	seller_id ...,
+	item_id ...,
+	quantity_in_stock
+)
+
+create table order_info (
+	order_info_id int unsigned auto_increment primary key,
+    customer_id mediumint unsigned not null,
+    ...
+    order_number int unsigned unique not null,
+    order_date datetime not null,
+    order_status enum ('Open', 'Completed', 'Cancelled'),
+	...
+);
+
+create table order_info_item (
+	order_info_id int unsigned not null,
+    item_id int unsigned not null,
+	seller_id int,
+    quantity smallint unsigned not null,
+    delivered_date datetime, 
+
