@@ -30,3 +30,12 @@ select
 	)
 from address;
 
+-- create columns address_line_1 and city in the table
+-- and assign values to them based on the above substring_index() code
+alter table address add (address_line_1 varchar (100));
+alter table address add (city varchar (20));
+select * from address;
+update address set address_line_1 = substring_index(full_address, ',', 1);
+select * from address;
+
+
