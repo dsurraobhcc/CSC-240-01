@@ -1,0 +1,43 @@
+Use stored procedures when modifying data.
+
+Use user-defined functions when querying data.
+
+Do not store passwords in plain-text in the db.
+
+'dominic'/'mypssword1'
+
+-- encrypted password
+'dominic'/'lakje-3prj34u90e()(U()#$#'
+
+'mypssword1' gets encrypted as 'lakje-3prj34u90e()(U()#$#' 
+
+Login: 'dominic', 'mypssword1'
+-> 'mypssword1' -> encrypted using a predefined key -> should match 'lakje-3prj34u90e()(U()#$#'
+
+if no match, login fails.
+
+
+Scenario without salted password:
+Hacker gains access to the database
+Gets username & hashed password
+Correctly guess the unhashed password
+Hacker knows hashed<-->unhashed combination
+If there is another account with the same hash, that account 
+is also compromised.
+
+Scenario with salted password:
+Hacker gains access to the database
+Gets username & hashed password
+Correctly guess the unhashed password
+Hacker knows hashed<-->unhashed combination
+If there is another account with the same hash, that account
+will have a different salt, so password cannot be guessed.
+
+
+Installing the employees database
+1. Install git
+2. Clone the repo
+3. Run instruction in the README
+	- get mysql running from the command line
+
+
