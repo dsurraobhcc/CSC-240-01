@@ -16,6 +16,12 @@ GROUP BY f.title, c.name;
 
 select * from sales_by_film;
 
--- get maximum total sales by category
--- use MAX() and GROUP BY
+-- get films whose total sales is the maximum for their category
+-- use correlated subquery
+select * from sales_by_film s1
+where s1.total_sales = (
+	select max(s2.total_sales) from sales_by_film s2
+    where s2.name = s1.name
+);
+
 
