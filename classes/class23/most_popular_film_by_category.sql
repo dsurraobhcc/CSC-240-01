@@ -22,6 +22,7 @@ select * from sales_by_film s1
 where s1.total_sales = (
 	select max(s2.total_sales) from sales_by_film s2
     where s2.name = s1.name
-);
+)
+and name = 'Action';
 
 
