@@ -1,0 +1,24 @@
+create appt:
+ patient, date&time, doctor
+
+output: appt_id
+
+update appt:
+ appt_id, date&time, status, doctor
+
+upsert appt:
+ appt_id, patient, date&time, status, doctor
+ if appt_id is null
+   insert ...
+ else
+   update.. where id = appt_id
+
+Support CRUD operations:
+Create, Read, Update, Delete
+
+sp_add_customer
+sp_update_customer
+sp_delete_customer
+
+
+
